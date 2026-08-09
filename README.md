@@ -49,10 +49,12 @@ Static HTML/CSS, no build step. Deployed with GitHub Pages (legacy build from `m
 Cloudflare Pages uses direct upload; after changing site files:
 
 ```bash
-cd /Users/weijiachen/.codex/skills/game-wiki-builder
-CLOUDFLARE_API_TOKEN="$TOKEN" CLOUDFLARE_ACCOUNT_ID="c712eb2c173cd2b62b0a3acc80115ea7" \
-  scripts/deploy_pages.sh /Users/weijiachen/出海学习/big-walk-guide big-walk-guide
+/Users/weijiachen/.codex/skills/game-wiki-builder/scripts/deploy_pages.sh \
+  /Users/weijiachen/出海学习/big-walk-guide big-walk-guide
 ```
+
+The script reads the fixed Cloudflare credentials from
+`~/.config/game-wiki-builder/cloudflare.env` automatically; no token needed on the command line.
 
 GitHub Pages (legacy build from `main`) rebuilds automatically on push:
 
