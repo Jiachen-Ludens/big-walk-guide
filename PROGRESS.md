@@ -27,7 +27,7 @@
 ## Phase 6: Deploy (2026-08-08)
 
 - 完成 GitHub Pages：https://jiachen-ludens.github.io/big-walk-guide/ ，Pages status=built，15 页+style.css 线上全部 200。
-- Cloudflare Pages：待用户控制台连接（无 API token），步骤写入 BLOCKED.md。
+- 2026-08-09 完成 Cloudflare Pages：用户提供 API token 后自动部署，地址 https://big-walk-guide-3nr.pages.dev ，16 个文件线上全部 200。更新流程：`CLOUDFLARE_API_TOKEN=... scripts/deploy_pages.sh big-walk-guide big-walk-guide`。
 
 ## Phase 7: Handoff (2026-08-09)
 

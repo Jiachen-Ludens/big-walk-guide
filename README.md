@@ -4,7 +4,8 @@ A static English game-wiki site for the cooperative online adventure **Big Walk*
 
 ## Live URL
 
-https://jiachen-ludens.github.io/big-walk-guide/
+- Cloudflare Pages: https://big-walk-guide-3nr.pages.dev (canonical)
+- GitHub Pages: https://jiachen-ludens.github.io/big-walk-guide/
 
 GitHub repo: https://github.com/Jiachen-Ludens/big-walk-guide
 
@@ -43,12 +44,20 @@ Other frequently judged doable keywords: Mistfall Hunter (18 doable mentions), B
 
 Static HTML/CSS, no build step. Deployed with GitHub Pages (legacy build from `main`).
 
-Update flow:
+## Update Flow
+
+Cloudflare Pages uses direct upload; after changing site files:
+
+```bash
+cd /Users/weijiachen/.codex/skills/game-wiki-builder
+CLOUDFLARE_API_TOKEN="$TOKEN" CLOUDFLARE_ACCOUNT_ID="c712eb2c173cd2b62b0a3acc80115ea7" \
+  scripts/deploy_pages.sh /Users/weijiachen/出海学习/big-walk-guide big-walk-guide
+```
+
+GitHub Pages (legacy build from `main`) rebuilds automatically on push:
 
 ```bash
 git add -A
 git -c commit.gpgsign=false commit -m "update"
 git push origin main
 ```
-
-GitHub Pages rebuilds automatically.
